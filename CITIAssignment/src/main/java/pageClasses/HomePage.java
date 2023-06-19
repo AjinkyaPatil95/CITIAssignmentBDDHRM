@@ -19,5 +19,6 @@ public class HomePage extends BaseClass {
 
     public void homePagePIM() {
         ActionClass.clickElement(PIMPTab);
+        log.info("Clicked on PIM page");
     }
 }

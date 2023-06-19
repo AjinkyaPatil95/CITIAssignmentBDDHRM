@@ -68,6 +68,7 @@ public class PIMPage extends BaseClass {
         ActionClass.clickElement(EmployeeList);
         Thread.sleep(2000);
         ActionClass.enterText(name, Epname);
+        log.info("Searched Employee");
     }
 
 }

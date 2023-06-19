@@ -1,0 +1,7 @@
+2023-06-19 12:42:44 INFO  BaseClass:45 - Property file loaded
+2023-06-19 12:42:51 INFO  BaseClass:53 - Browser Initiated successfully
+2023-06-19 12:42:56 INFO  BaseClass:57 - OrangeHRM application opened
+2023-06-19 12:42:56 INFO  BaseClass:26 - Login Page Opened
+2023-06-19 12:42:57 INFO  BaseClass:26 - Username entered
+2023-06-19 12:42:57 INFO  BaseClass:28 - Password entered
+2023-06-19 12:42:58 INFO  BaseClass:30 - click on Login Button

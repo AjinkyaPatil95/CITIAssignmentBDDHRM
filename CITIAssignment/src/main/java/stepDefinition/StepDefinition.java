@@ -21,7 +21,8 @@ public class StepDefinition extends BaseClass {
 
     @Given("user logged in")
     public void user_logged_in() throws IOException {
-        BaseClass.BaseClass();
+        BaseClass baseclass=new BaseClass();
+        baseclass.BaseClassMethod();
         log.info("Login Page Opened");
     }
 

@@ -9,6 +9,8 @@ import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import java.util.Properties;
 
+//import io.cucumber.java.After;
+//import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -27,18 +29,18 @@ public class BaseClass {
     public static Properties prop;
     public static WebDriver driver;
     public static String Browser;
-    public static Logger log;
+    final public static Logger log = Logger.getLogger(BaseClass.class);;
 
     @Before
-    public static void BaseClass() throws FileNotFoundException, IOException {
+    public void BaseClassMethod() throws IOException {
 
 
-        log = log.getLogger(BaseClass.class);
-
-        PropertyConfigurator.configure("C:\\Users\\ajinkya.patil1\\IdeaProjects\\CITIAssignment\\src\\main\\java\\configFile\\log4j2.properties");
+//        log = Logger.getLogger(BaseClass.class);
+//log.addAppender();
+        PropertyConfigurator.configure("C:\\Users\\ajink\\IdeaProjects\\CITIAssignment\\CITIAssignment\\src\\main\\java\\configFile\\log4j2.properties");
         prop = new Properties();
 
-        prop.load(new FileReader("C:\\OrangeHRM\\src\\test\\java\\configFiles\\config.properties"));
+        prop.load(new FileReader("C:\\Users\\ajink\\IdeaProjects\\CITIAssignment\\CITIAssignment\\src\\main\\java\\configFile\\config.properties"));
 
         log.info("Property file loaded");
         Browser = prop.getProperty("Browser");
@@ -64,7 +66,7 @@ public class BaseClass {
         try {
             if (scenario.isFailed()) {
                 File ScreenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                File destinationFIle = new File("C:\\Users\\ajinkya.patil1\\IdeaProjects\\CITIAssignment\\Screen");
+                File destinationFIle = new File("C:\\Users\\ajink\\IdeaProjects\\CITIAssignment\\CITIAssignment\\Screen");
                 Files.copy(ScreenshotFile.toPath(), destinationFIle.toPath(), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException e) {
